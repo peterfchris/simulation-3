@@ -28,7 +28,7 @@ module.exports = {
     const authenticated = bcrypt.compareSync(password, userFound[0].password);
     if (authenticated) {
       session.username = {
-        id: userFound[0].username,
+        id: userFound[0].user_id,
         username: userFound[0].username
       };
       res.status(200).send(session.user);
